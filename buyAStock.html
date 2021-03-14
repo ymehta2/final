@@ -14,19 +14,15 @@
     </div>
 
     <div class="flex text-xl text-blue-700 bg-blue-100 p-3">
-      <a class="w-1/2 text-center font-semibold border-blue-200" href="index.html">Home</a>
-      <a class="w-1/2 text-center font-semibold border-blue-200" href="aboutUs.html">About Us</a>
-      <a class="w-1/2 text-center font-semibold border-blue-200" href="buyAStock.html">Buy Stock</a>
-      <a class="w-1/2 text-center font-semibold border-blue-200" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="index.html">Home</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="aboutUs.html">About Us</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200 underline" href="buyAStock.html">Buy Stock</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
         
     </div>
 
-    <div class="pr-4">
-      <p class= text-right>Welcome <span class='font-bold'> Neel Desai </span></p>
-    </div>
     
-    <div class='sign-in-or-sign-out '>
-      <p class= 'text-right pr-4'> Sign-out</p>
+    <div class='sign-in-or-sign-out text-right'>
     </div>
       
       
@@ -40,6 +36,14 @@
     
       <div class='stockSearch w-full mt-8 text-center'>
         
+      </div>
+
+      <div class="submitOrderDiv">
+      
+      </div>
+
+      <div class="stocksPortfolio">
+      
       </div>
       
 
@@ -56,6 +60,10 @@
     <!-- Put the Firebase config here -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    
+    <!-- Firebase Scrip -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+    
     <!-- Firebase Auth -->
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>

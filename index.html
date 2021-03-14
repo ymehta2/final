@@ -10,39 +10,52 @@
 </head>
 
 <body>
+  
   <div>
     <h1 class="text-center text-4xl text-white bg-blue-500 font-semibold p-2">StonX</h1>
     <h1 class="text-center text-xl text-white bg-blue-500 font-semibold p-3">Your Personal Portfolio</h1>
   </div>
 
   <div class="flex text-xl text-blue-700 bg-blue-100 p-3">
-    <a class="w-1/2 text-center font-semibold border-blue-200" href="index.html">Home</a>
-    <a class="w-1/2 text-center font-semibold border-blue-200" href="aboutUs.html">About Us</a>
-    <a class="w-1/2 text-center font-semibold border-blue-200" href="buyAStock.html">Buy Stock</a>
-    <a class="w-1/2 text-center font-semibold border-blue-200" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200 underline" href="index.html">Home</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="aboutUs.html">About Us</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="buyAStock.html">Buy Stock</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
       
   </div>
-
-  <div class="pr-4">
-    <p class= text-right>Welcome <span class='font-bold'> Neel Desai </span></p>
-  </div>
   
-  <div class='sign-in-or-sign-out '>
-    <p class= 'text-right pr-4'> Sign-out</p>
+  <div class='sign-in-or-sign-out text-right'>
+    
   </div>
 
-  <div class="h-screen">
+  <div class='submitButton'>
     
-    <table class="border-separate border border-green-800">
+  </div>
+
+
+  <div class='stocksPortfolio'>
+    
+  </div>
+
+  <div class='portfolioHeader pl-10 text-2xl font-bold text-blue-500'>
+    My Portfolio
+  </div>
+
+
+  <div class="stockTable h-screen pt-10 pl-10">
+    
+    <table class="border-separate border border-green-800 w-3/4 align-center">
       <thead>
         <tr>
-          <th class='border border-green-600'>Stock Ticker</th>
-          <th class='border border-green-600'>Quantity</th>
-          <th class='border border-green-600'>Price</th>
+          <th class='border border-blue-500 w-1/3 bg-blue-500 text-white'>Stock Ticker</th>
+          <th class='border border-blue-500 w-1/3 bg-blue-500 text-white'>Quantity</th>
+          <th class='border border-blue-500 w-1/3 bg-blue-500 text-white'>Price</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
+         
+      
+      <tbody class="stockTable2">
+        <!-- <tr>
           <td class='border border-green-600'>TSLA</td>
           <td class='border border-green-600'>5</td>
           <td class='border border-green-600'>750</td>
@@ -56,18 +69,15 @@
           <td class='border border-green-600'>RYCEY</td>
           <td class='border border-green-600'>100</td>
           <td class='border border-green-600'>129</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
-    <div class="inline-block mr-2 mt-2">
+    <div class="inline-block mr-2 mt-2 pt-5">
       <button type="button" onclick="document.location='buyAStock.html'" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg"> BUY STOCKS</button>
   </div>
 </div>
-  <div class="md:flex">
-    <!-- <img class="md:w-1/2" src="Assets/wallstreetbets.jpg" alt=""> -->
-    <img class="md:w-1/2" src="Front3_Page_Bubbles.jpg" alt="">
-</div>
+  
 
 <div class="pt-4 text-center">
   <footer class="h-10">
@@ -85,6 +95,10 @@
   <!-- Put the Firebase config here -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  
+  <!-- Firebase Scrip -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+  
   <!-- Firebase Auth -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
