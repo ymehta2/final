@@ -13,19 +13,14 @@
       </div>
     
       <div class="flex text-xl text-blue-700 bg-blue-100 p-3">
-        <a class="w-1/2 text-center font-semibold border-blue-200" href="index.html">Home</a>
-        <a class="w-1/2 text-center font-semibold border-blue-200" href="aboutUs.html">About Us</a>
-        <a class="w-1/2 text-center font-semibold border-blue-200" href="buyAStock.html">Buy Stock</a>
-        <a class="w-1/2 text-center font-semibold border-blue-200" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
-          
+        <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="index.html">Home</a>
+        <a class="w-1/2 text-center font-semibold border-blue-200 underline" href="aboutUs.html">About Us</a>
+        <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="buyAStock.html">Buy Stock</a>
+        <a class="w-1/2 text-center font-semibold border-blue-200 hover:underline" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
       </div>
     
-      <div class="pr-4">
-        <p class= text-right>Welcome <span class='font-bold'> Neel Desai </span></p>
-      </div>
-      
-      <div class='sign-in-or-sign-out '>
-        <p class= 'text-right pr-4'> Sign-out</p>
+     
+      <div class='sign-in-or-sign-out text-right'>
       </div>
     
 
@@ -85,7 +80,31 @@
       </footer>
     </div>
     
-   
     
+       <!-- Below is where all the configuration items begin -->
+       <div class="sign-in-or-sign-out"></div>
+  
+       <!-- Put the Firebase config here -->
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+       <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+       <!-- Firebase Auth -->
+       <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+   
+       <script>
+         // Your web app's Firebase configuration
+         var firebaseConfig = {
+           apiKey: "AIzaSyAvxF37Ihx9TmXbES_H-22jsCeeQoA5ga8",
+           authDomain: "kiei-451-cb972.firebaseapp.com",
+           projectId: "kiei-451-cb972",
+           storageBucket: "kiei-451-cb972.appspot.com",
+           messagingSenderId: "264975974212",
+           appId: "1:264975974212:web:4f2476f2995fa68b2a2111"
+         } // replace
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+       </script>
+       <script src="index.js"></script>
+       <script src="stocks.js"></script>
 </body>
 </html>
