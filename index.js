@@ -21,22 +21,39 @@ firebase.auth().onAuthStateChanged(async function(user) {
     ui.start('.sign-in-or-sign-out', authUIConfig)
   }
 
-  let stocks = new Stocks('CF0SLZCQGPR7G3PA')
-  let result = await stocks.timeSeries({
-    symbol: 'TSLA',
-    interval: '1min',
-    amount: 1
-   });
-  
-  // document.querySelector('.stockSearch').insertAdjacentElement('beforeend', `
-  //  <h1>Stock ticker ${result.symbol}</h1>
-  // `)
-  
-  document.querySelector('.stockSearch').insertAdjacentHTML('beforeend', `
-  <div class="w-1/5 p-4">
-    ${result[0].close}
-  </div>
-`)
-console.log(result)
-  
+  document.querySelector('.submitButton').addEventListener('click', async function(event){
+    event.preventDefault()
+    document.querySelector('.stockSearch').innerHTML = ``
+    
+    let stockTicker = document.getElementById("stock-ticker-input").value
+    let stockQuantity = document.getElementById("stock-quantity-input").value
+    
+    let stocks = new Stocks('CF0SLZCQGPR7G3PA')
+    let result = await stocks.timeSeries({
+      symbol: stockTicker,
+      interval: '1min',
+      amount: 1
+    });
+    
+    let orderCost = result[0].close * stockQuantity
+    console.log(orderCost)
+
+    document.querySelector('.stockSearch').insertAdjacentHTML('beforeend', `
+    <div class="w-full p-4">
+    The stock price of ${stockTicker} as of ${result[0].date} was
+    </div>
+
+    <div class="w-full p-4 text-purple-500 font-bold text-2xl text-center">
+    $${result[0].close}
+    </div>
+
+    <div class="w-full p-4 text-purple-500 font-bold text-2xl text-center">
+    For ${stockQuantity} shares, it would cost ${orderCost}.
+    </div>
+
+    `)
+
+  console.log(result)
+})
+
 })

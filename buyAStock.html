@@ -7,24 +7,73 @@
     <title>About Me</title>
 </head>
 <body>
+    
     <div>
-        <h1 class="text-center text-2xl text-white bg-blue-900 font-semibold">StonX - Your Personal Portfolio</h1>
-      </div>
+      <h1 class="text-center text-4xl text-white bg-blue-500 font-semibold p-2">StonX</h1>
+      <h1 class="text-center text-xl text-white bg-blue-500 font-semibold p-3">Your Personal Portfolio</h1>
+    </div>
+
+    <div class="flex text-xl text-blue-700 bg-blue-100 p-3">
+      <a class="w-1/2 text-center font-semibold border-blue-200" href="index.html">Home</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200" href="aboutUs.html">About Us</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200" href="buyAStock.html">Buy Stock</a>
+      <a class="w-1/2 text-center font-semibold border-blue-200" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
+        
+    </div>
+
+    <div class="pr-4">
+      <p class= text-right>Welcome <span class='font-bold'> Neel Desai </span></p>
+    </div>
     
-      <div class="flex text-xl text-red-800 bg-blue-100">
-          <a class="w-1/2 text-center font-semibold border-2 border-blue-200" href="buyAStock.html">Buy a stock</a>
-          <a class="w-1/2 text-center font-semibold border-2 border-blue-200" href="aboutUs.html">About Us</a>
-      </div>
-    
+    <div class='sign-in-or-sign-out '>
+      <p class= 'text-right pr-4'> Sign-out</p>
+    </div>
+      
+      
       <div>
-        <p class= text-right>Welcome <span class='font-bold'> Neel Desai </span></p>
+        <form class="w-full mt-8 text-center">
+          <input type="text" id="stock-ticker-input" name="stock-ticker-input" placeholder="Stock Ticker" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+          <input type="number" id="stock-quantity-input" name="stock-quantity-input" placeholder="Quantity" class="my-2 p-2 w-64 border border-gray-400 rounded shadow-xl focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+          <button class="submitButton bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Check Price</button>
+        </form>
+      </div>
+    
+      <div class='stockSearch w-full mt-8 text-center'>
+        
       </div>
       
-      <div class='sign-in-or-sign-out'>
-        <p class= 'text-right'> Sign-out</p>
-      </div>
-       
-   
-    <h3 class="italic font-semibold text-sm text-red-800"> <a href="index.html">Back to homepage</a></h3>
+
+      <div class="pt-4 text-center">
+        <footer class="h-10">
+          <h1 class="italic font-semibold text-sm bg-gray-600 text-white pt-2">We are NOT advisors, we just really like StonX</h1>
+          <h1 class="italic font-semibold text-sm bg-gray-600 text-white pb-2">A TON of copyright pending</h1>
+      </footer>
+  
+
+    <!-- Below is where all the configuration items begin -->
+    <div class="sign-in-or-sign-out"></div>
+  
+    <!-- Put the Firebase config here -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAvxF37Ihx9TmXbES_H-22jsCeeQoA5ga8",
+        authDomain: "kiei-451-cb972.firebaseapp.com",
+        projectId: "kiei-451-cb972",
+        storageBucket: "kiei-451-cb972.appspot.com",
+        messagingSenderId: "264975974212",
+        appId: "1:264975974212:web:4f2476f2995fa68b2a2111"
+      } // replace
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
+    <script src="stocks.js"></script>
 </body>
 </html>

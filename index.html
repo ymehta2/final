@@ -11,64 +11,69 @@
 
 <body>
   <div>
-    <h1 class="text-center text-2xl text-white bg-blue-900 font-semibold">StonX - Your Personal Portfolio</h1>
+    <h1 class="text-center text-4xl text-white bg-blue-500 font-semibold p-2">StonX</h1>
+    <h1 class="text-center text-xl text-white bg-blue-500 font-semibold p-3">Your Personal Portfolio</h1>
   </div>
 
-  <div class="flex text-xl text-red-800 bg-blue-100">
-      <a class="w-1/2 text-center font-semibold border-2 border-blue-200" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
-      <a class="w-1/2 text-center font-semibold border-2 border-blue-200" href="aboutUs.html">About Us</a>
+  <div class="flex text-xl text-blue-700 bg-blue-100 p-3">
+    <a class="w-1/2 text-center font-semibold border-blue-200" href="index.html">Home</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200" href="aboutUs.html">About Us</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200" href="buyAStock.html">Buy Stock</a>
+    <a class="w-1/2 text-center font-semibold border-blue-200" href="https://www.reddit.com/r/wallstreetbets/">Stock Advice</a>
+      
   </div>
 
-  <div>
+  <div class="pr-4">
     <p class= text-right>Welcome <span class='font-bold'> Neel Desai </span></p>
   </div>
   
-  <div class='sign-in-or-sign-out'>
-    <p class= 'text-right'> Sign-out</p>
+  <div class='sign-in-or-sign-out '>
+    <p class= 'text-right pr-4'> Sign-out</p>
   </div>
 
-  <div class='stockSearch'>
+  <div class="h-screen">
     
+    <table class="border-separate border border-green-800">
+      <thead>
+        <tr>
+          <th class='border border-green-600'>Stock Ticker</th>
+          <th class='border border-green-600'>Quantity</th>
+          <th class='border border-green-600'>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class='border border-green-600'>TSLA</td>
+          <td class='border border-green-600'>5</td>
+          <td class='border border-green-600'>750</td>
+        </tr>
+        <tr class="bg-emerald-200">
+          <td class='border border-green-600'>GME</td>
+          <td class='border border-green-600'>1</td>
+          <td class='border border-green-600'>350</td>
+        </tr>
+        <tr>
+          <td class='border border-green-600'>RYCEY</td>
+          <td class='border border-green-600'>100</td>
+          <td class='border border-green-600'>129</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="inline-block mr-2 mt-2">
+      <button type="button" onclick="document.location='buyAStock.html'" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg"> BUY STOCKS</button>
   </div>
-
-  <table class="border-separate border border-green-800">
-    <thead>
-      <tr>
-        <th class='border border-green-600'>Stock Ticker</th>
-        <th class='border border-green-600'>Quantity</th>
-        <th class='border border-green-600'>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class='border border-green-600'>TSLA</td>
-        <td class='border border-green-600'>5</td>
-        <td class='border border-green-600'>750</td>
-      </tr>
-      <tr class="bg-emerald-200">
-        <td class='border border-green-600'>GME</td>
-        <td class='border border-green-600'>1</td>
-        <td class='border border-green-600'>350</td>
-      </tr>
-      <tr>
-        <td class='border border-green-600'>RYCEY</td>
-        <td class='border border-green-600'>100</td>
-        <td class='border border-green-600'>129</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="inline-block mr-2 mt-2">
-    <button type="button" onclick="document.location='buyAStock.html'" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-blue-600 hover:shadow-lg"> BUY STOCKS</button>
- </div>
-
+</div>
   <div class="md:flex">
-    <img class="md:w-1/2" src="wallstreetbets.jpg" alt="">
+    <!-- <img class="md:w-1/2" src="Assets/wallstreetbets.jpg" alt=""> -->
     <img class="md:w-1/2" src="Front3_Page_Bubbles.jpg" alt="">
 </div>
-<div>
-  <h1 class="italic font-semibold text-sm">We are NOT advisors, we just really like StonX</h1>
-  <h1 class="italic font-semibold text-sm">A TON of copyright pending</h1>
+
+<div class="pt-4 text-center">
+  <footer class="h-10">
+    <h1 class="italic font-semibold text-sm bg-gray-600 text-white pt-2">We are NOT advisors, we just really like StonX</h1>
+    <h1 class="italic font-semibold text-sm bg-gray-600 text-white pb-2">A TON of copyright pending</h1>
+</footer>
 </div>
 
 
