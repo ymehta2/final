@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     event.preventDefault()
     document.querySelector('.stockSearch').innerHTML = ``
     document.querySelector('.submitOrderDiv').innerHTML = ``
-    
+        
     let stockTicker = document.getElementById("stock-ticker-input").value
     let stockQuantity = document.getElementById("stock-quantity-input").value
     
@@ -54,7 +54,8 @@ firebase.auth().onAuthStateChanged(async function(user) {
     let docRef = await db.collection('Portfolio').doc(`${orderCost}-${stockQuantity}-${stockTicker}-${firebase.auth().currentUser.uid}`).set({
       stockTicker: stockTicker,
       stockOwned: stockQuantity,
-      orderTotal: orderCost
+      orderTotal: orderCost,
+      userId: firebase.auth().currentUser.uid
     })
     document.location.href = "index.html"
     console.log(docRef)
@@ -66,8 +67,12 @@ firebase.auth().onAuthStateChanged(async function(user) {
   })
     let db = firebase.firestore()
     let querySnapshot = await db.collection('Portfolio').get()
-              
-      let items = querySnapshot.docs
+    
+    let querySnapshot2 = await db.collection('Portfolio').where('userId', '==', firebase.auth().currentUser.uid).get()
+    
+    
+
+      let items = querySnapshot2.docs
 
       for (let i=0; i<items.length; i++) {
         let item = items[i].data() // each member of the docs Array is a reference, so use .data() to get it into an Object
@@ -81,8 +86,12 @@ firebase.auth().onAuthStateChanged(async function(user) {
         <td class='border border-blue-300 text-center'>$${item.orderTotal}</td>
       </tr>
       `)
+
       }
 
+      document.querySelector(".portfolioHeader").insertAdjacentHTML('beforeend', `
+      My Portfolio
+      `)
       
 
 } else {
