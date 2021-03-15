@@ -51,41 +51,41 @@ firebase.auth().onAuthStateChanged(async function(user) {
 
     let db = firebase.firestore()
     document.querySelector(".submitOrderButton").addEventListener("click", async function(event){
-    let docRef = await db.collection('Portfolio').doc(`${orderCost}-${stockQuantity}-${stockTicker}-${firebase.auth().currentUser.uid}`).set({
-      stockTicker: stockTicker,
-      stockOwned: stockQuantity,
-      orderTotal: orderCost,
-      userId: firebase.auth().currentUser.uid
+
+    let response = await fetch ('/.netlify/functions/buy_a_stock', {
+      method: 'POST',
+      body: JSON.stringify({
+        stockTicker: stockTicker,
+        stockOwned: stockQuantity,
+        orderTotal: orderCost,
+        userId: firebase.auth().currentUser.uid
+      })
     })
     document.location.href = "index.html"
-    console.log(docRef)
     })
 
-
-
-  console.log(result)
   })
     let db = firebase.firestore()
-    let querySnapshot = await db.collection('Portfolio').get()
     
-    let querySnapshot2 = await db.collection('Portfolio').where('userId', '==', firebase.auth().currentUser.uid).get()
+    // let querySnapshot2 = await db.collection('Portfolio').where('userId', '==', firebase.auth().currentUser.uid).get()
     
-    
+    //   let items = querySnapshot2.docs
 
-      let items = querySnapshot2.docs
+      let response = await fetch(`/.netlify/functions/get_stocks?userId=${firebase.auth().currentUser.uid}`)
+      let stocks = await response.json()
+     
 
-      for (let i=0; i<items.length; i++) {
-        let item = items[i].data() // each member of the docs Array is a reference, so use .data() to get it into an Object
-        item.stockTicker // => e.g. 'grapes'
+      for (let i=0; i<stocks.length; i++) {
        
-        
-      document.querySelector(".stockTable2").insertAdjacentHTML('beforeend', `
-      <tr>
-        <td class='border border-blue-300 text-center'>${item.stockTicker}</td>
-        <td class='border border-blue-300 text-center'>${item.stockOwned}</td>
-        <td class='border border-blue-300 text-center'>$${item.orderTotal}</td>
-      </tr>
-      `)
+        let stock = stocks[i]
+          
+        document.querySelector(".stockTable2").insertAdjacentHTML('beforeend', `
+        <tr>
+          <td class='border border-blue-300 text-center'>${stock.stockTicker}</td>
+          <td class='border border-blue-300 text-center'>${stock.stockOwned}</td>
+          <td class='border border-blue-300 text-center'>$${stock.orderTotal}</td>
+        </tr>
+        `)
 
       }
 
